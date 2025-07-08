@@ -6,10 +6,10 @@ A deep learning pipeline for unsupervised anomaly detection using autoencoders, 
 
 ##  Project Summary
 
-- Objective: Detect anomalies by modeling baseline behavior using deep autoencoders
-- Achieved **>80% test accuracy** with 3 distinct architectures
-- Evaluated on reconstruction error distribution and anomaly thresholding
-- Work emphasizes temporal patterns, regularization, and evaluation analysis
+- Objective: Detect anomalies by modeling baseline behavior using deep autoencoders  
+- Achieved **>80% test accuracy** with 3 distinct architectures  
+- Evaluated on reconstruction error distribution and anomaly thresholding  
+- Work emphasizes temporal patterns, regularization, and evaluation analysis  
 
 ---
 
@@ -29,23 +29,23 @@ Each model follows the compression-decompression structure with a bottleneck lay
 
 ##  Dataset Summary
 
-- Time-series dataset selected from open benchmarks (e.g., Yahoo S5, NAB, Backblaze)
-- Focus on **anomalous trend detection**: spikes, dips, or deviations
-- Normalization applied per feature; missing values handled through interpolation and imputation
+- Time-series dataset selected from open benchmarks (e.g., Yahoo S5, NAB, Backblaze)  
+- Focus on **anomalous trend detection**: spikes, dips, or deviations  
+- Normalization applied per feature; missing values handled through interpolation and imputation  
 - Split ratio: **Train / Validation / Test = 70 / 15 / 15**
 
 ---
 
 ##  Evaluation Methodology
 
-- **Loss Function**: Mean Squared Error (MSE)
-- **Optimization**: Adam optimizer with learning rate tuning
-- **Regularization**: L2 norm penalties and dropout
-- **Thresholding**: Statistical analysis on reconstruction error distribution
-- **Metrics**:
-  - Accuracy, F1-score
-  - Mean Absolute Error (MAE), Root Mean Square Error (RMSE)
-  - Precision, Recall for anomaly detection
+- **Loss Function**: Mean Squared Error (MSE)  
+- **Optimization**: Adam optimizer with learning rate tuning  
+- **Regularization**: L2 norm penalties and dropout  
+- **Thresholding**: Statistical analysis on reconstruction error distribution  
+- **Metrics**:  
+  - Accuracy, F1-score  
+  - Mean Absolute Error (MAE), Root Mean Square Error (RMSE)  
+  - Precision, Recall for anomaly detection  
 
 ---
 
@@ -133,11 +133,11 @@ A fully connected architecture to learn global representations from flattened in
 After rigorous evaluation across nine variants of three base architectures, the **Conv1D Autoencoder V2** was selected as the best-performing model.
 
 **Why Conv1D V2?**
-- Efficient and fast to train
-- Low MSE: `0.000025`
-- Low Std Dev: `0.000006`
-- Robust performance with no overfitting
-- Best trade-off between generalization and interpretability
+- Efficient and fast to train  
+- Low MSE: `0.000025`  
+- Low Std Dev: `0.000006`  
+- Robust performance with no overfitting  
+- Best trade-off between generalization and interpretability  
 
 <img src="https://github.com/user-attachments/assets/b17a5642-ab86-44c3-9db0-fa80d6c40b54" width="850"/>
 
@@ -171,15 +171,12 @@ After rigorous evaluation across nine variants of three base architectures, the 
 
 ---
 
----
-
 ##  Key Findings
 
-- **Dense autoencoder** provided fast convergence but lacked temporal nuance
-- **LSTM model** excelled on sequential features, yielding higher anomaly separation
-- **Conv1D** found subtle local patterns, but performance was dataset-dependent
-- **Thresholding via reconstruction error distribution** was effective and interpretable
-- **Hyperparameter tuning** (dropout rate, hidden size, batch size) had significant impact
+- **Dense autoencoder** provided fast convergence but lacked temporal nuance  
+- **LSTM model** excelled on sequential features, yielding higher anomaly separation  
+- **Conv1D** found subtle local patterns, but performance was dataset-dependent  
+- **Thresholding via reconstruction error distribution** was effective and interpretable  
+- **Hyperparameter tuning** (dropout rate, hidden size, batch size) had significant impact  
 
 ---
-
